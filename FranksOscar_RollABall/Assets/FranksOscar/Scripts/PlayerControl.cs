@@ -11,7 +11,6 @@ public class PlayerControl : MonoBehaviour
     private int count;
     public Text countText;
     public Text winText;
-    public float jumpSpeed;
 
     public void start()
     {
@@ -24,10 +23,8 @@ public class PlayerControl : MonoBehaviour
     {
         float h = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         float v = Input.GetAxis("Vertical") * speed * Time.deltaTime;
-        float j = Input.GetAxis("Jump") * jumpSpeed * Time.deltaTime;
 
         ball.Move(new Vector3(h, 0f, v));
-        ball.Jump(new Vector3(j, 0f, j));
     }
 
     void OnTriggerEnter(Collider other)
